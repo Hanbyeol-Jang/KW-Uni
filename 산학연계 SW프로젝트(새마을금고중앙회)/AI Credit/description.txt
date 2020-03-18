@@ -1,0 +1,37 @@
+id: 식별자 
+disbursal: 지출액 
+asset: 자산
+value: 대출금의 가치 -> 대출금
+birth: 고객 생년월일
+type: 고객 유형 (student / rookie) null
+
+disbursal_date: 지출 날짜 
+state: 지출 상태 
+
+education: 교육비 사용
+transport: 교통비 연체
+travel: 해외 여행
+mobile: 통신비 연체
+medical: 의료비 사용
+
+count_loan: 총 대출 횟수
+count_card: 신용카드 갯수
+count_account: 총 계좌 수
+
+current_balance: 현재 잔액 (단위 천원)
+sanction_amount: 승인 금액 (단위 천원)
+
+surety: 보증인
+consulting: 컨설팅 횟수
+cultural: 한 달내 문화 생활 
+drink: 한 달내 음주 횟수
+
+primary_amount: 1차 대출 금액
+secondary_amount: 2 차 대출 금액
+new: 6 개월 안에 신규 대출
+default: 6 개월 동안 채무 불이행
+
+loan_default: 연체
+
+score: 신용점수
+score_description: 신용점수 의미
