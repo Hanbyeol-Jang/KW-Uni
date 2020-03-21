@@ -1,0 +1,8 @@
+module ASR8(d_in, shamt, d_out);
+	input [7:0] d_in;
+	input [1:0] shamt;
+	output [7:0] d_out;
+	
+	
+	
+endmodule

@@ -1,0 +1,40 @@
+module bus_arbit(m0_req, m1_req, clk, reset_n, m0_grant, m1_grant);		//bus arbiter
+	input m0_req, m1_req, clk, reset_n;		//input
+	output m0_grant, m1_grant;					//output
+	
+	reg [1:0] state;								//reg(current state)
+	reg [1:0] next_state;						//reg(next state)
+	
+	parameter M0_Grant = 2'b10;				//M0Grant state
+	parameter M1_Grant = 2'b01;				//M1Grant state
+	
+	always @(posedge clk or negedge reset_n)	
+	begin
+		if(reset_n==1'b0)	state <= M0_Grant;			//reset이 0이면 state는 계속 M0_Grant
+		else					state <= next_state;			//이외에는 다음 state			
+	end
+	
+	always @(m0_req, m1_req, state, next_state)	
+	begin
+		case(state)								//case문
+			M0_Grant	:																	//state가 M0_Grant일때
+			begin	
+				if(m0_req==1'b0&&m1_req==1'b1)								next_state	<=	M1_Grant;	//m0_req가 0이고 m1_req가 1이면	M1_Grant로이동
+				else if((m0_req==1'b0&&m1_req==1'b0)||m0_req==1'b1)	next_state	<=	M0_Grant;	//이외에는 제자리		
+				else 																	next_state <= 2'bx;
+			end
+			
+			M1_Grant	:																//state가 M1_Grant일때
+			begin	
+				if(m1_req==1'b0)			next_state	<=	M0_Grant;	//m1_req가 0이면 M0_Grant로 이동
+				else if(m1_req==1'b1)	next_state	<=	M1_Grant;	//이외에는 제자리
+				else							next_state <=2'bx;
+			end
+			
+			default	:	next_state	<=	2'bx;	//예외처리 이외의 값에는 unknown값 지정
+		endcase
+	end
+	
+	assign {m0_grant, m1_grant} = state;	//m1_grant와 m0_grant를 이어서 state지정
+	
+endmodule

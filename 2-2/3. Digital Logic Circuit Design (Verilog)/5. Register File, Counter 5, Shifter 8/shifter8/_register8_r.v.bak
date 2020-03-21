@@ -1,0 +1,15 @@
+module _ register8_r(clk, reset_n, d, q);
+	input clk, reset_n;
+	input [7:0] d;
+	output [7:0] q;
+	
+	_dff_r
+	_dff_r
+	_dff_r
+	_dff_r
+	_dff_r
+	_dff_r
+	_dff_r
+	_dff_r
+	
+endmodule

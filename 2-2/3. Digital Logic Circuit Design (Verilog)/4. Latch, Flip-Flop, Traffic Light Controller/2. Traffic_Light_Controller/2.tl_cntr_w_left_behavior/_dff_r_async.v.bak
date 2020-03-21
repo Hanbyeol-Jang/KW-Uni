@@ -1,0 +1,11 @@
+module _dff_r_async(clk,reset_n,d,q);//reset,set을 가진 dff가 asyncronous
+input clk,reset_n,d;
+output reg q;
+
+
+always@(posedge clk or negedge reset_n)//clk은 rising edge에서  영향
+begin 																	//reset_n이 값이 떨어지면 그즉시 영향
+if(reset_n==0) q<=1'b0;
+else q<=d;
+end
+endmodule

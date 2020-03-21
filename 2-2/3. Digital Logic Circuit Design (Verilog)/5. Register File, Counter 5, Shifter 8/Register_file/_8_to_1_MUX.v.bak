@@ -1,0 +1,19 @@
+module _8_to_1_MUX(a, b, c, d, e, f, g, h, sel, d_out);	//_8_to_1 mux
+	input [31:0] a, b, c, d, e, f, g, h;						//input
+	input [2:0]	sel;
+	output reg[31:0]d_out;											//output reg
+	
+	always@(sel, a, b, c, d, e, f, g, h)begin
+		case(sel)														//case문
+			3'b000: d_out=a;											//해당 값에 d_out을 지정해줌
+			3'b001: d_out=b;
+			3'b010: d_out=c;
+			3'b011: d_out=d;
+			3'b100: d_out=e;
+			3'b101: d_out=f;
+			3'b110: d_out=g;
+			3'b111: d_out=h;
+			default:d_out=32'hx;										//default일때 unknown값으로 예외처리
+		endcase
+	end
+endmodule

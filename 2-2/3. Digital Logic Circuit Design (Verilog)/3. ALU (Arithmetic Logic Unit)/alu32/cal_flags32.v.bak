@@ -1,0 +1,9 @@
+module cal_flag32(op, result, co_add, co_prev_add, co_sub, co_prev_sub, c, n, z, y);
+	input		[2:0]		op;
+	input		[31:0]	result;
+	input					co_add, co_prev_add, co_sub, co_prev_sub;
+	output				c, n, z, v;
+	
+	assign 
+	
+endmodule

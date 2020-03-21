@@ -1,0 +1,13 @@
+module tl_cntr_w_left(clk,reset_n,ta,tb,tal,tbl,la,lb);//top module
+input clk,reset_n,ta,tb,tal,tbl;
+output [1:0] la,lb;
+
+wire		[2:0]	next_state;
+wire		[2:0]	state;
+
+//세개의 모듈을 연결해줌 
+_register3_r U0_register3_r(.clk(clk),.reset_n(reset_n),.d(next_state),.q(state));//register3 instance
+ns_logic U1_ns_logic(.ta(ta),.tb(tb),.tal(tal),.tbl(tbl),.state(state),.nextstate(next_state));//ns_logic instance
+o_logic U2_o_logic(.state(state),.la(la),.lb(lb));//o_logic instance
+
+endmodule

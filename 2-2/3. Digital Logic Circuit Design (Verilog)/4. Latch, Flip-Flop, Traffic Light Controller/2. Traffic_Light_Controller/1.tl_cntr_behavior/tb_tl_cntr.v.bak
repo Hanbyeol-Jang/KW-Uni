@@ -1,0 +1,25 @@
+`timescale 1ns/100ps	
+
+module tb_tl_cntr;	
+	reg clk, reset, tb_Ta, tb_Tb;							
+	wire [1:0] tb_La,tb_Lb;	
+	
+	tl_cntr U0_tl_cntr(.Ta(tb_Ta), .Tb(tb_Tb), .La(tb_La), .Lb(tb_Lb), .reset(reset), .clk(clk));
+
+	always
+	begin
+		clk=0; #5; clk=1; #5;						
+	end
+	
+	initial
+	begin
+		reset=1'b0; tb_Ta = 1'b1;		
+		#10;	reset=1'b1; tb_Ta = 1'b0;	  
+		#10;	
+		#10; tb_Tb=1'b0;
+		#10; 
+		#10; $stop;
+	end
+	
+	endmodule
+	

@@ -1,0 +1,36 @@
+`timescale 1ns/100ps
+
+module tb_tl_cntr_w_left_be;//traffic controller를 확인하기 위한 testbench
+reg clk,tb_reset_n;
+reg tb_ta,tb_tb,tb_tal,tb_tbl;
+wire [1:0]tb_la;
+wire [1:0]tb_lb;
+
+tl_cntr_w_left_be U0_tl_cntr_w_left_be(.clk(clk),.reset_n(tb_reset_n),.ta(tb_ta),.tb(tb_tb),.tal(tb_tal),.tbl(tb_tbl),.la(tb_la),.lb(tb_lb));//top module과 instance
+
+parameter STEP = 10;	
+always#(STEP/2) clk = ~clk;  //상승하고 5ns지난후 에서 clock가 다운하게끔 한다
+
+initial
+begin
+ clk = 0; tb_reset_n= 1'b0; tb_ta=1'b0;tb_tb=1'b0;tb_tal= 1'b0; tb_tbl=1'b0;//clk와 reset를 초기화
+ #(STEP-2); tb_reset_n = 1'b1;tb_ta=1'b1;tb_tb=1'b0;tb_tal= 1'b0; tb_tbl=1'b0;//s0일 경우 ta가 1
+ #(STEP);tb_reset_n= 1'b1;tb_ta=1'b0;tb_tal= 1'b0; tb_tbl=1'b0;//s0일 경우 ta가 0
+ #(STEP);tb_reset_n= 1'b1;tb_ta=1'b1;tb_tb=1'b1;tb_tal= 1'b0; tb_tbl=1'b0;//s1일 경우 
+ #(STEP);tb_reset_n= 1'b1;tb_ta=1'b0;tb_tb=1'b1;tb_tal= 1'b1; tb_tbl=1'b0;//s2일 경우 tal가 1
+ #(STEP);tb_reset_n= 1'b1;tb_ta=1'b1;tb_tb=1'b0;tb_tal= 1'b0; tb_tbl=1'b0;//s2일 경우 tal가 0
+ #(STEP);tb_reset_n= 1'b1;tb_ta=1'b1;tb_tb=1'b0;tb_tal= 1'b1; tb_tbl=1'b0;//s3일 경우 
+ #(STEP);tb_reset_n= 1'b1;tb_ta=1'b1;tb_tb=1'b1;tb_tal= 1'b1; tb_tbl=1'b0;//s4일 경우 tb가 1
+ #(STEP);tb_reset_n= 1'b1;tb_ta=1'b1;tb_tb=1'b0;tb_tal= 1'b0; tb_tbl=1'b0;//s4일 경우 tb가 0
+ #(STEP);tb_reset_n= 1'b1;tb_ta=1'b1;tb_tb=1'b0;tb_tal= 1'b0; tb_tbl=1'b0;//s5일 경우 
+ #(STEP);tb_reset_n= 1'b1;tb_ta=1'b1;tb_tb=1'b0;tb_tal= 1'b0; tb_tbl=1'b1;//s6일 경우 tbl가 1
+ #(STEP);tb_reset_n= 1'b1;tb_ta=1'b1;tb_tb=1'b0;tb_tal= 1'b0; tb_tbl=1'b0;//s6일 경우 tbl가 0
+ #(STEP);tb_reset_n= 1'b1;tb_ta=1'b1;tb_tb=1'b0;tb_tal= 1'b0; tb_tbl=1'b0;//s7일 경우 
+ #(STEP);tb_reset_n= 1'b1;tb_ta=1'b1;tb_tb=1'b0;tb_tal= 1'b0; tb_tbl=1'b0;//s0일 경우 ta가 1
+ #(STEP);tb_reset_n= 1'b1;tb_ta=1'b1;tb_tb=1'b0;tb_tal= 1'b0; tb_tbl=1'b0;//s0일 경우 ta가 1
+ #(STEP);tb_reset_n= 1'b0;tb_ta=1'b1;tb_tb=1'b0;tb_tal= 1'b0; tb_tbl=1'b0;//reset
+ #(STEP);$stop;
+ end
+ 
+ endmodule
+ 

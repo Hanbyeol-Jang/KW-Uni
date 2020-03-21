@@ -1,0 +1,45 @@
+`timescale 1ns/100ps									//시간단위 설정
+
+module tb_fifo;		
+	reg tb_clk, tb_reset_n, tb_rd_en, tb_wr_en;		//reg(input)
+	reg [31:0] tb_din;
+	wire [31:0] tb_dout;										//wire(output)
+	wire [3:0] tb_data_count;
+	wire tb_full, tb_empty, tb_wr_ack, tb_wr_err, tb_rd_ack, tb_rd_err;
+	
+	fifo U0_fifo(.clk(tb_clk), .reset_n(tb_reset_n), .rd_en(tb_rd_en), .wr_en(tb_wr_en), .din(tb_din), .dout(tb_dout), .data_count(tb_data_count), .full(tb_full), .empty(tb_empty), .wr_ack(tb_wr_ack), .wr_err(tb_wr_err), .rd_ack(tb_rd_ack), .rd_err(tb_rd_err));
+	//해당 값들을 지정된 fifo input output에 맞춰서 설정
+	always
+	begin
+		tb_clk=0; #5; tb_clk=1; #5;		//clk을 5단위로 계속 넣어줌
+	end
+	
+	initial
+	begin
+		tb_reset_n=0; tb_din=32'h0; tb_rd_en=0; tb_wr_en=0; #10;			//해당값들을 순차적으로 넣어주면서 output값 확인
+		tb_reset_n=1; #10;															
+		tb_rd_en=1; #10;																
+		tb_rd_en=0; tb_wr_en=1; tb_din=32'hffff0000; #10;	
+		tb_din=32'h0000ffff; #10;	
+		tb_wr_en=1; tb_din=32'h00ff00ff; #10;	
+		tb_wr_en=1; tb_din=32'h000fff00; #10;
+		tb_din=32'hff0ff000; #10;
+		tb_rd_en=1; tb_wr_en=0; #10;	
+		tb_rd_en=0; tb_wr_en=1; tb_din=32'hf0f0f0f0; #10;	
+		tb_din=32'hffffffff; #10;		
+		tb_din=32'h0000ff00; #10;
+		tb_din=32'hffffff00; #10;
+		tb_din=32'h00ffffff; #10;	
+		tb_din=32'hff0000ff; #10;	
+		tb_wr_en=0; #10;	
+		tb_rd_en=1; tb_wr_en=0; #10;
+		tb_rd_en=1; #50;
+		tb_rd_en=0; tb_wr_en=1; tb_din=32'hfff0f000; #10;
+		tb_rd_en=1; tb_wr_en=0; #50;	
+		tb_rd_en=1; #10;	
+		tb_wr_en=1; tb_rd_en=0; tb_din=32'h00ffff00; #10;	
+		tb_reset_n=0; #10;
+		$stop;
+	end
+	
+endmodule

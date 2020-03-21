@@ -1,0 +1,7 @@
+module mx8_4bits(a, b, c, d, e, f, g, h, s2, s1, s0, y);
+	input [3:0] a, b, c, d, e, f, g, h;
+	input s2, s1, s0;
+	output [3:0] y;
+	
+
+endmodule

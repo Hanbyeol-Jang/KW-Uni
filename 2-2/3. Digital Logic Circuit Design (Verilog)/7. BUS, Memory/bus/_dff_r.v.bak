@@ -1,0 +1,13 @@
+module _dff_r(clk, reset_n, d1, d2, q);					//3bit resettable flip flop
+	input clk, reset_n;										//input
+	input d1,d2;
+	output [1:0] q;											//output
+	reg [1:0] q;												//reg
+	
+	always @ (posedge clk or negedge reset_n)									//clk 이rising edge일때 나 reset_n이 falling edge일때 작동
+	begin
+		if(reset_n == 0)	q <= 2'b0;						//reset이 0 이면 q는 항상 0
+		else 					q <={d1,d2};							//그외에는 q={d1,d2}
+	end
+	
+endmodule

@@ -1,0 +1,12 @@
+module cnt5(cnt,clk,reset_n,inc);
+	input				clk, reset_n, inc;
+	output[2:0]		cnt;
+	
+	//Encoded states
+	parameter zero  = 3'b000;
+	parameter one   = 3'b001;
+	parameter two   = 3'b010;
+	parameter three = 3'b011;
+	parameter fore  = 3'b100;
+	
+endmodule

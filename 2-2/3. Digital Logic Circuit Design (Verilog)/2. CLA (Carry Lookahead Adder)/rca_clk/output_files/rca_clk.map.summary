@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Sep 14 20:48:33 2017
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Revision Name : rca_clk
+Top-level Entity Name : rca_clk
+Family : Cyclone II
+Total logic elements : 144
+    Total combinational functions : 79
+    Dedicated logic registers : 98
+Total registers : 98
+Total pins : 99
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

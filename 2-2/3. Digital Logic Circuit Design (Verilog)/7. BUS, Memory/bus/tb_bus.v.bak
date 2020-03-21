@@ -1,0 +1,45 @@
+`timescale 1ns/100ps				//시간단위 설정
+	
+module tb_bus;		
+	reg clk, reset_n, tb_M0_req, tb_M1_req, tb_M0_wr, tb_M1_wr;							//input	
+	reg [7:0] tb_M0_address, tb_M1_address;	
+	reg [31:0] tb_M0_dout, tb_M1_dout, tb_S0_dout, tb_S1_dout;				
+	wire tb_M0_grant, tb_M1_grant, tb_S0_sel, tb_S1_sel, tb_S_wr;						//wire		
+	wire [7:0] tb_S_address;				
+	wire [31:0] tb_S_din, tb_M_din;				
+	
+	
+	bus U0_bus(.clk(clk), .reset_n(reset_n), .M0_req(tb_M0_req), .M1_req(tb_M1_req), .M0_wr(tb_M0_wr), .M1_wr(tb_M1_wr), 
+			.M0_address(tb_M0_address), .M1_address(tb_M1_address), .M0_dout(tb_M0_dout), .M1_dout(tb_M1_dout),
+			.S0_dout(tb_S0_dout), .S1_dout(tb_S1_dout), .M0_grant(tb_M0_grant), .M1_grant(tb_M1_grant), .M_din(tb_M_din),
+			.S0_sel(tb_S0_sel), .S1_sel(tb_S1_sel), .S_wr(tb_S_wr), .S_address(tb_S_address), .S_din(tb_S_din));
+			
+			//bus module에 있는 값들을 해당 tb값들로 매치하여 넣어준다.
+	always	
+	begin
+		clk=0; #5; clk=1; #5;		//5시간단위 주기로 clock계속 넣어준다.
+	end
+	
+	initial
+	begin
+		reset_n=0; tb_M0_req=0; tb_M1_req=0; tb_M0_wr=0; tb_M1_wr=0;			//처음 모든 값을 초기화 해준다.
+		tb_M0_address=8'b0; tb_M1_address=8'b0; tb_M0_dout=32'b0; tb_M1_dout=32'b0;
+		tb_S0_dout=32'b0; tb_S1_dout=32'b0; #10;		
+		
+		reset_n=1;tb_M0_req=1; tb_M0_wr=1; tb_M0_address=8'h01; tb_M0_dout=32'h11111111;	//이후 10단위시간을 두고 해당하는 값들 input으로 넣어주고 output값 확인
+		tb_S0_dout=32'h01; tb_S1_dout=32'h02; #10;
+		tb_M0_address=8'h10; tb_M0_dout=32'h22222222; #10;	
+		tb_M0_address=8'h25; tb_M0_dout=32'h33333333; #10;
+		tb_M0_address=8'h41; tb_M0_dout=32'h44444444; #10;	
+		tb_M0_req=0; tb_M1_req=1; tb_M1_wr=1; #10;									//m1 grant의 지시를 받는다.
+		tb_M1_address=8'h8; tb_M1_dout=32'h55555555; #10;	
+		tb_M1_address=8'h21; tb_M1_dout=32'h66666666; #10;	
+		tb_M0_req=1; tb_M1_req=0; #10;													//m0 grant의 지시를 받는다.
+		tb_M0_address=8'h31; tb_M0_dout=32'h77777777; #10;
+		tb_M0_address=8'h43; tb_M0_dout=32'h88888888; #10;
+		tb_M0_req=0; tb_M1_req=1; tb_M1_address=8'h30; tb_M1_dout=32'h99999999; #10;	//m1 grant의 지시를 받는다.
+		$stop;
+	end
+	
+endmodule
+	

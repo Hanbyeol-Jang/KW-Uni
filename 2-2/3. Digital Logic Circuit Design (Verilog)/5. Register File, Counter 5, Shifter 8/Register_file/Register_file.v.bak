@@ -1,0 +1,10 @@
+module Register_file(clk, reset_n, wAddr, wData, we, rAddr, rData);
+	input clk, reset_n, we;
+	input [2:0] wAddr, rAddr;
+	input [31:0] rData;
+	
+	wire [7:0] to_reg;
+	wire [31:0] from_reg[7:0];
+	
+	
+endmodule

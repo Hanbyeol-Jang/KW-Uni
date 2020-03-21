@@ -1,0 +1,9 @@
+module mx2(d0, d1, s, y);
+	input d0, d1;
+	input s;
+	output y;
+	wire sb, w0, w1;
+	
+
+
+endmodule

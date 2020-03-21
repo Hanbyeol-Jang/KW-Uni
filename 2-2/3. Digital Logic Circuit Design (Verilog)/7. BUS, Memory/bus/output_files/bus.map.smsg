@@ -1,0 +1,9 @@
+Warning (10273): Verilog HDL warning at mux2_8bit.v(12): extended using "x" or "z"
+Warning (10268): Verilog HDL information at mux2_8bit.v(7): always construct contains both blocking and non-blocking assignments
+Warning (10273): Verilog HDL warning at mux3_32bit.v(13): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at mux2_32bit.v(12): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at bus_arbit.v(24): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at bus_arbit.v(31): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at bus_arbit.v(34): extended using "x" or "z"
+Info (10281): Verilog HDL Declaration information at bus_arbit.v(3): object "m0_grant" differs only in case from object "M0_Grant" in the same scope
+Info (10281): Verilog HDL Declaration information at bus_arbit.v(3): object "m1_grant" differs only in case from object "M1_Grant" in the same scope

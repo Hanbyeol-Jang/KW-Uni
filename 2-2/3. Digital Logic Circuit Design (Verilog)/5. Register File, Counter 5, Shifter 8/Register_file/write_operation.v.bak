@@ -1,0 +1,23 @@
+module _3_to_8_decoder(d,q);
+	input[2:0]d;
+	output reg[7:0]q;
+	
+	always@(d) begin
+		case(d)
+		
+		
+		
+		
+		endcase
+	end
+endmodule
+
+module write_operation(Addr, we, to_reg);
+	input we;
+	input [2:0]Addr;
+	output [7:0] to_reg;
+	
+	wire[7:0] write_wire;
+	
+	
+endmodule

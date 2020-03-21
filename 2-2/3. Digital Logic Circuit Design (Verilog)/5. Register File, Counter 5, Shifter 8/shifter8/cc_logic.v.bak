@@ -1,0 +1,30 @@
+module cc_logic(op, shamt, d_in, d_out, do_next);
+	input [2:0] op;
+	input [1:0] shamt;
+	input [7:0] d_in;
+	input [7:0] d_out;
+	output [7:0] do_next;
+	reg [7:0] do_next;
+	
+	wire [7:0] d_lsl;
+	wire [7:0] d_lsr;
+	wire [7:0] d_asr;
+	
+	parameter NOP  = 3'b000;
+	parameter LOAD = 3'b001;
+	parameter LSL  = 3'b010;
+	parameter LSR  = 3'b011;
+	parameter ASR  = 3'b100;
+	
+	always@(op, shamt, d_in, d_out, d_lsl, d_lsr, d_asr)
+	begin
+		case(op)
+		
+		endcase
+	end
+	
+	LSL8
+	LSR8
+	ASR8
+	
+endmodule

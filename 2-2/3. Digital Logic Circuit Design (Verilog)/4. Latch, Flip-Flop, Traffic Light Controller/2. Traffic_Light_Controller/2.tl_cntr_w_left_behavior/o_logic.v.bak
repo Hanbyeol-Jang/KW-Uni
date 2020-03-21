@@ -1,0 +1,59 @@
+module o_logic(state,la,lb);//output logic behavior
+input [2:0] state;
+output reg[1:0] la;
+output reg[1:0] lb;
+
+parameter s0 = 3'b000;//state 정의
+parameter s1 = 3'b001;
+parameter s2 = 3'b010;
+parameter s3 = 3'b011;
+parameter s4 = 3'b100;
+parameter s5 = 3'b101;
+parameter s6 = 3'b110;
+parameter s7 = 3'b111;
+
+parameter red = 2'b00; // 신호 정의
+parameter yellow = 2'b01;
+parameter green = 2'b10;
+parameter left = 2'b11;
+
+always@(state)
+begin
+case(state)
+			s0 : 
+						begin 
+								la <= green; lb <= red; //조건에 따라 s1으로
+						end
+				  
+			
+			s1 : begin 
+								la <= yellow;lb <= red; end//항상 s2로 이동
+			
+			s2 : 
+					begin 
+								la <= left;lb <= red; end//조건에 따라 s3으로
+					
+			
+			s3 : begin 
+								la <= yellow;lb <= red; end//항상 s4로 이동
+		
+			s4 : 
+						begin 
+								la <= red;lb <= green; end//조건에 따라 s5으로
+					
+			s5 : begin 
+								la <= red;lb <= yellow; end//항상 s6로 이동
+			
+			s6 : 
+						begin 
+								la <= red;lb <= left; end//조건에 따라 s7으로
+				
+			
+			s7 : begin 
+								la <= red;lb <= yellow; end//항상 s0로 이동
+			default;
+			endcase
+end
+		
+
+endmodule

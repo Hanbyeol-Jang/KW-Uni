@@ -1,0 +1,22 @@
+module memory (clk, cen, wen, addr, din,dout);
+	input clk;
+	input cen, wen;
+	input [4:0] addr;
+	input [31:0] din;
+	
+	output reg [31:0] dout;
+	
+	reg [31:0] mem [0:31];
+	
+	integer i;
+	
+	initial begin
+	
+	
+	
+	
+	
+	
+	
+	
+endmodule

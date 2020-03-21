@@ -1,0 +1,31 @@
+`timescale 1ns/100ps									//시간단위 설정
+
+module tb_Register_file;							
+	reg tb_clk, tb_reset_n, tb_we;				//reg
+	reg  [2:0]  tb_wAddr, tb_rAddr;
+	reg  [31:0] tb_wData;
+	wire [31:0] tb_rData;							//wire
+	
+	Register_file U0_Register_file(.clk(tb_clk), .reset_n(tb_reset_n), .wAddr(tb_wAddr), .wData(tb_wData), .we(tb_we), .rAddr(tb_rAddr), .rData(tb_rData));
+	//Register_file에 해당하는 값들 매칭시켜줌 
+	always
+	begin
+		tb_clk=0; #5; tb_clk=1; #5;			//5주기로 clk 계속 넣어준다.
+	end
+	
+	initial
+	begin														//처음 input값들을 모두 0으로 초기화
+	tb_reset_n=0; tb_we=0; tb_wAddr=3'b000; tb_rAddr=3'b000; tb_wData=31'h00000000;
+	#10; tb_reset_n=1; tb_we=1; tb_wData=32'h11111111;			//10단위시간을 두고 input값들을 변경하면서 output값 확인
+	#10; tb_wAddr=3'b001; tb_wData=32'hff00ff00;
+	#10; tb_wAddr=3'b010;
+	#10; tb_wAddr=3'b011; tb_wData=32'h0000ffff;
+	#10; tb_rAddr=3'b001;
+	#10; tb_rAddr=3'b010;
+	#10; tb_rAddr=3'b011;
+	#10; $stop;
+	
+	end
+endmodule
+
+	

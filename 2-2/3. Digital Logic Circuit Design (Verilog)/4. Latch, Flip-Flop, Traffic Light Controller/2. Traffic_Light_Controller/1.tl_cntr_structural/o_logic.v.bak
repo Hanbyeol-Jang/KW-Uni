@@ -1,0 +1,10 @@
+module o_logic(state,la,lb);//output logic
+input [1:0] state;
+output[1:0] la;
+output[1:0] lb;
+
+assign la[1] = state[1]; //la1 = q1
+assign la[0] = (~state[1]) & (state[0]);//la0 = 'q1q0
+assign lb[1] = (~state[1]);//lb1 = 'q1
+assign lb[0] = (state[1]) & (state[0]);//lb0 = q1q0
+endmodule

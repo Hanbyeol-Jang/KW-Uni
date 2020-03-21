@@ -1,0 +1,28 @@
+module fifo(clk, reset_n, rd_en, wr_en, din, dout, data_count, full, empty, wr_ack, wr_err, rd_ack, rd_err);  //fifo
+	input clk, reset_n, rd_en, wr_en;			//input 
+	input [31:0] din;									
+	output [31:0]dout;								//output
+	output full, empty;								//가득 찬지 비어있는지 확인
+	output wr_ack, wr_err, rd_ack, rd_err;		//정확히 동작했는지 확인
+	output [3:0] data_count;
+	
+	wire[2:0] head, next_head;						//wire
+	wire[2:0] tail, next_tail;
+	wire[2:0] state, next_state;
+	wire[3:0] next_data_count;
+	wire		 we, re;									
+	wire[31:0] to_mux, to_ff;						
+
+	
+	_dff_3_r U0_head(.clk(clk), .reset_n(reset_n), .d(next_head), .q(head));
+	_dff_3_r U1_tail(.clk(clk), .reset_n(reset_n), .d(next_tail), .q(tail));
+	_dff_3_r U2_state(.clk(clk), .reset_n(reset_n), .d(next_state), .q(state));
+	fifo_ns  U3_ns(.rd_en(rd_en), .wr_en(wr_en), .state(state), .data_count(data_count), .next_state(next_state));
+	fifo_cal U4_cal(.state(next_state), .data_count(data_count), .head(head), .tail(tail), .re(re), .we(we), .next_data_count(next_data_count), .next_head(next_head), .next_tail(next_tail));
+	_dff_4_r U5_data_count(.clk(clk), .reset_n(reset_n), .d(next_data_count), .q(data_count));
+	fifo_out U6_fifo_out(.state(state), .data_count(data_count), .empty(empty), .full(full), .rd_ack(rd_ack), .rd_err(rd_err), .wr_ack(wr_ack), .wr_err(wr_err));
+	Register_file U7_register(.clk(clk), .reset_n(reset_n), .wAddr(tail), .wData(din), .we(we), .rAddr(head), .rData(to_mux));
+	mx2_to_ff U8_mx2(.d0(32'h0), .d1(to_mux), .s(re), .y(to_ff));
+	_DFF31 U9_dff(.clk(clk), .reset_n(reset_n), .d(to_ff), .q(dout));
+	  
+endmodule

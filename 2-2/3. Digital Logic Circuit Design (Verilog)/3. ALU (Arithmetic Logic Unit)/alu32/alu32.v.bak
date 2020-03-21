@@ -1,0 +1,11 @@
+module alu32(a, b, op, result, c, n, z, v);
+	input 	[31:0]	a, b;
+	input		[2:0]		op;
+	output	[31:0]	result;
+	output				c, n, z, v;
+	
+	wire		[31:0]	w_not_a, w_not_b, w_and, w_or, w_xor, w_xnor, w_add, w_sub;
+	wire					co_prev_add, co_add, co_prev_sub, co_sub;
+	
+	
+endmodule

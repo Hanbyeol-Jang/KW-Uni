@@ -1,0 +1,463 @@
+Analysis & Synthesis report for shifter8
+Tue Oct 10 22:30:26 2017
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: cc_logic:U1_cc_logic
+ 11. Port Connectivity Checks: "cc_logic:U1_cc_logic|LSR8:U1_LSR8|mx4:U7_mx4"
+ 12. Port Connectivity Checks: "cc_logic:U1_cc_logic|LSR8:U1_LSR8|mx4:U6_mx4"
+ 13. Port Connectivity Checks: "cc_logic:U1_cc_logic|LSR8:U1_LSR8|mx4:U5_mx4"
+ 14. Port Connectivity Checks: "cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U2_mx4"
+ 15. Port Connectivity Checks: "cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U1_mx4"
+ 16. Port Connectivity Checks: "cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U0_mx4"
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Oct 10 22:30:26 2017      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; shifter8                                   ;
+; Top-level Entity Name              ; shifter8                                   ;
+; Family                             ; Cyclone II                                 ;
+; Total logic elements               ; 52                                         ;
+;     Total combinational functions  ; 52                                         ;
+;     Dedicated logic registers      ; 8                                          ;
+; Total registers                    ; 8                                          ;
+; Total pins                         ; 23                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C70F896C6       ;                    ;
+; Top-level entity name                                                      ; shifter8           ; shifter8           ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                               ;
++----------------------------------+-----------------+------------------------+----------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                 ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------+---------+
+; gates.v                          ; yes             ; User Verilog HDL File  ; C:/Users/starh/5week/shifter8/gates.v        ;         ;
+; mx4.v                            ; yes             ; User Verilog HDL File  ; C:/Users/starh/5week/shifter8/mx4.v          ;         ;
+; LSL8.v                           ; yes             ; User Verilog HDL File  ; C:/Users/starh/5week/shifter8/LSL8.v         ;         ;
+; LSR8.v                           ; yes             ; User Verilog HDL File  ; C:/Users/starh/5week/shifter8/LSR8.v         ;         ;
+; ASR8.v                           ; yes             ; User Verilog HDL File  ; C:/Users/starh/5week/shifter8/ASR8.v         ;         ;
+; shifter8.v                       ; yes             ; User Verilog HDL File  ; C:/Users/starh/5week/shifter8/shifter8.v     ;         ;
+; _dff_r.v                         ; yes             ; User Verilog HDL File  ; C:/Users/starh/5week/shifter8/_dff_r.v       ;         ;
+; _register8_r.v                   ; yes             ; User Verilog HDL File  ; C:/Users/starh/5week/shifter8/_register8_r.v ;         ;
+; cc_logic.v                       ; yes             ; User Verilog HDL File  ; C:/Users/starh/5week/shifter8/cc_logic.v     ;         ;
+; mx2.v                            ; yes             ; User Verilog HDL File  ; C:/Users/starh/5week/shifter8/mx2.v          ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 52       ;
+;                                             ;          ;
+; Total combinational functions               ; 52       ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 33       ;
+;     -- 3 input functions                    ; 18       ;
+;     -- <=2 input functions                  ; 1        ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 52       ;
+;     -- arithmetic mode                      ; 0        ;
+;                                             ;          ;
+; Total registers                             ; 8        ;
+;     -- Dedicated logic registers            ; 8        ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 23       ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; shamt[0] ;
+; Maximum fan-out                             ; 21       ;
+; Total fan-out                               ; 225      ;
+; Average fan-out                             ; 2.71     ;
++---------------------------------------------+----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
++----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                               ; Library Name ;
++----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------+--------------+
+; |shifter8                        ; 52 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |shifter8                                                                         ;              ;
+;    |_register8_r:U0_register8_r| ; 7 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|_register8_r:U0_register8_r                                             ;              ;
+;       |_dff_r:U0_dff_r|          ; 4 (4)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|_register8_r:U0_register8_r|_dff_r:U0_dff_r                             ;              ;
+;       |_dff_r:U1_dff_r|          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|_register8_r:U0_register8_r|_dff_r:U1_dff_r                             ;              ;
+;       |_dff_r:U2_dff_r|          ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|_register8_r:U0_register8_r|_dff_r:U2_dff_r                             ;              ;
+;       |_dff_r:U3_dff_r|          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|_register8_r:U0_register8_r|_dff_r:U3_dff_r                             ;              ;
+;       |_dff_r:U4_dff_r|          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|_register8_r:U0_register8_r|_dff_r:U4_dff_r                             ;              ;
+;       |_dff_r:U5_dff_r|          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|_register8_r:U0_register8_r|_dff_r:U5_dff_r                             ;              ;
+;       |_dff_r:U6_dff_r|          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|_register8_r:U0_register8_r|_dff_r:U6_dff_r                             ;              ;
+;       |_dff_r:U7_dff_r|          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|_register8_r:U0_register8_r|_dff_r:U7_dff_r                             ;              ;
+;    |cc_logic:U1_cc_logic|        ; 45 (28)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic                                                    ;              ;
+;       |LSL8:U0_LSL8|             ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8                                       ;              ;
+;          |mx4:U0_mx4|            ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U0_mx4                            ;              ;
+;             |mx2:U2_mx2|         ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U0_mx4|mx2:U2_mx2                 ;              ;
+;                |_nand2:U1_nand2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U0_mx4|mx2:U2_mx2|_nand2:U1_nand2 ;              ;
+;          |mx4:U1_mx4|            ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U1_mx4                            ;              ;
+;             |mx2:U2_mx2|         ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U1_mx4|mx2:U2_mx2                 ;              ;
+;                |_nand2:U1_nand2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U1_mx4|mx2:U2_mx2|_nand2:U1_nand2 ;              ;
+;          |mx4:U2_mx4|            ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U2_mx4                            ;              ;
+;             |mx2:U1_mx2|         ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U2_mx4|mx2:U1_mx2                 ;              ;
+;                |_nand2:U1_nand2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U2_mx4|mx2:U1_mx2|_nand2:U1_nand2 ;              ;
+;          |mx4:U5_mx4|            ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U5_mx4                            ;              ;
+;             |mx2:U2_mx2|         ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U5_mx4|mx2:U2_mx2                 ;              ;
+;                |_nand2:U3_nand3| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U5_mx4|mx2:U2_mx2|_nand2:U3_nand3 ;              ;
+;          |mx4:U6_mx4|            ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U6_mx4                            ;              ;
+;             |mx2:U2_mx2|         ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U6_mx4|mx2:U2_mx2                 ;              ;
+;                |_nand2:U3_nand3| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U6_mx4|mx2:U2_mx2|_nand2:U3_nand3 ;              ;
+;       |LSR8:U1_LSR8|             ; 10 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSR8:U1_LSR8                                       ;              ;
+;          |mx4:U0_mx4|            ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSR8:U1_LSR8|mx4:U0_mx4                            ;              ;
+;             |mx2:U2_mx2|         ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSR8:U1_LSR8|mx4:U0_mx4|mx2:U2_mx2                 ;              ;
+;                |_nand2:U3_nand3| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSR8:U1_LSR8|mx4:U0_mx4|mx2:U2_mx2|_nand2:U3_nand3 ;              ;
+;          |mx4:U5_mx4|            ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSR8:U1_LSR8|mx4:U5_mx4                            ;              ;
+;             |mx2:U2_mx2|         ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSR8:U1_LSR8|mx4:U5_mx4|mx2:U2_mx2                 ;              ;
+;                |_nand2:U3_nand3| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSR8:U1_LSR8|mx4:U5_mx4|mx2:U2_mx2|_nand2:U3_nand3 ;              ;
+;          |mx4:U6_mx4|            ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSR8:U1_LSR8|mx4:U6_mx4                            ;              ;
+;             |mx2:U2_mx2|         ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSR8:U1_LSR8|mx4:U6_mx4|mx2:U2_mx2                 ;              ;
+;                |_nand2:U1_nand2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shifter8|cc_logic:U1_cc_logic|LSR8:U1_LSR8|mx4:U6_mx4|mx2:U2_mx2|_nand2:U1_nand2 ;              ;
++----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 8     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 8     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 5     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |shifter8|_register8_r:U0_register8_r|_dff_r:U0_dff_r|q ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |shifter8|_register8_r:U0_register8_r|_dff_r:U2_dff_r|q ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cc_logic:U1_cc_logic ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; NOP            ; 000   ; Unsigned Binary                          ;
+; LOAD           ; 001   ; Unsigned Binary                          ;
+; LSL            ; 010   ; Unsigned Binary                          ;
+; LSR            ; 011   ; Unsigned Binary                          ;
+; ASR            ; 100   ; Unsigned Binary                          ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cc_logic:U1_cc_logic|LSR8:U1_LSR8|mx4:U7_mx4"                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; d1     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; d1[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; d2     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; d2[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; d3     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; d3[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cc_logic:U1_cc_logic|LSR8:U1_LSR8|mx4:U6_mx4"                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; d2     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; d2[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; d3     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; d3[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cc_logic:U1_cc_logic|LSR8:U1_LSR8|mx4:U5_mx4"                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; d3     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; d3[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U2_mx4"                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; d3     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; d3[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U1_mx4"                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; d2     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; d2[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; d3     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; d3[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U0_mx4"                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; d1     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; d1[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; d2     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; d2[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; d3     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; d3[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Tue Oct 10 22:30:23 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off shifter8 -c shifter8
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 22 design units, including 22 entities, in source file gates.v
+    Info (12023): Found entity 1: _inv
+    Info (12023): Found entity 2: _nand2
+    Info (12023): Found entity 3: _and2
+    Info (12023): Found entity 4: _or2
+    Info (12023): Found entity 5: _xor2
+    Info (12023): Found entity 6: _and3
+    Info (12023): Found entity 7: _and4
+    Info (12023): Found entity 8: _and5
+    Info (12023): Found entity 9: _or3
+    Info (12023): Found entity 10: _or4
+    Info (12023): Found entity 11: _or5
+    Info (12023): Found entity 12: _inv_4bits
+    Info (12023): Found entity 13: _and2_4bits
+    Info (12023): Found entity 14: _or2_4bits
+    Info (12023): Found entity 15: _xor2_4bits
+    Info (12023): Found entity 16: _xnor2_4bits
+    Info (12023): Found entity 17: _inv_32bits
+    Info (12023): Found entity 18: _and2_32bits
+    Info (12023): Found entity 19: _or2_32bits
+    Info (12023): Found entity 20: _xor2_32bits
+    Info (12023): Found entity 21: _xnor2_32bits
+    Info (12023): Found entity 22: _nor2
+Info (12021): Found 1 design units, including 1 entities, in source file mx4.v
+    Info (12023): Found entity 1: mx4
+Info (12021): Found 1 design units, including 1 entities, in source file lsl8.v
+    Info (12023): Found entity 1: LSL8
+Info (12021): Found 1 design units, including 1 entities, in source file lsr8.v
+    Info (12023): Found entity 1: LSR8
+Info (12021): Found 1 design units, including 1 entities, in source file asr8.v
+    Info (12023): Found entity 1: ASR8
+Info (12021): Found 1 design units, including 1 entities, in source file shifter8.v
+    Info (12023): Found entity 1: shifter8
+Info (12021): Found 1 design units, including 1 entities, in source file _dff_r.v
+    Info (12023): Found entity 1: _dff_r
+Info (12021): Found 1 design units, including 1 entities, in source file _register8_r.v
+    Info (12023): Found entity 1: _register8_r
+Info (12021): Found 1 design units, including 1 entities, in source file cc_logic.v
+    Info (12023): Found entity 1: cc_logic
+Info (12021): Found 1 design units, including 1 entities, in source file tb_shifter8.v
+    Info (12023): Found entity 1: tb_shifter8
+Info (12021): Found 1 design units, including 1 entities, in source file mx2.v
+    Info (12023): Found entity 1: mx2
+Info (12127): Elaborating entity "shifter8" for the top level hierarchy
+Info (12128): Elaborating entity "_register8_r" for hierarchy "_register8_r:U0_register8_r"
+Info (12128): Elaborating entity "_dff_r" for hierarchy "_register8_r:U0_register8_r|_dff_r:U0_dff_r"
+Info (12128): Elaborating entity "cc_logic" for hierarchy "cc_logic:U1_cc_logic"
+Info (12128): Elaborating entity "LSL8" for hierarchy "cc_logic:U1_cc_logic|LSL8:U0_LSL8"
+Info (12128): Elaborating entity "mx4" for hierarchy "cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U0_mx4"
+Info (12128): Elaborating entity "mx2" for hierarchy "cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U0_mx4|mx2:U0_mx2"
+Info (12128): Elaborating entity "_inv" for hierarchy "cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U0_mx4|mx2:U0_mx2|_inv:U0_inv"
+Info (12128): Elaborating entity "_nand2" for hierarchy "cc_logic:U1_cc_logic|LSL8:U0_LSL8|mx4:U0_mx4|mx2:U0_mx2|_nand2:U1_nand2"
+Info (12128): Elaborating entity "LSR8" for hierarchy "cc_logic:U1_cc_logic|LSR8:U1_LSR8"
+Info (12128): Elaborating entity "ASR8" for hierarchy "cc_logic:U1_cc_logic|ASR8:U2_ASR8"
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (144001): Generated suppressed messages file C:/Users/starh/5week/shifter8/output_files/shifter8.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 75 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 52 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 486 megabytes
+    Info: Processing ended: Tue Oct 10 22:30:26 2017
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/starh/5week/shifter8/output_files/shifter8.map.smsg.
+
+

@@ -1,0 +1,38 @@
+module o_logic(state, La,Lb);
+	input [1:0] state;
+	output reg[1:0] La;
+	output reg[1:0] Lb;
+
+	parameter s0 = 2'b00;
+	parameter s1 = 2'b01;
+	parameter s2 = 2'b10;
+	parameter s3 = 2'b11;
+
+	parameter red = 2'b00;
+	parameter yellow = 2'b01;
+	parameter green = 2'b10;
+
+	always @(state)
+	begin
+		case(state)
+			s0 : begin
+					La <= yellow; Lb <=red;
+					end
+					
+			s1 :begin 
+					La <= red; Lb <= green;
+					end
+					
+			s2 : begin
+					La <= red; Lb <=yellow;
+					end
+					
+			s3 : begin 
+					La <= green ; Lb<= red;
+					end
+					
+			default;
+		endcase
+	end
+	
+endmodule

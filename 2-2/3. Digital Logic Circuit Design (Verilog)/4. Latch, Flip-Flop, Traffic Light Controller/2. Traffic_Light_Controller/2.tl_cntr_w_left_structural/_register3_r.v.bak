@@ -1,0 +1,10 @@
+module _register3_r(clk,reset_n,d,q);//3bit register가 필요
+input  clk,reset_n;
+input [2:0] d;
+output [2:0] q;
+
+_dff_r_async U0_dff_r_async(.clk(clk),.reset_n(reset_n),.d(d[0]),.q(q[0]));//reset이 들어오면 그즉시 변해야하므로 async
+_dff_r_async U1_dff_r_async(.clk(clk),.reset_n(reset_n),.d(d[1]),.q(q[1]));//state가 8개이므로 3bit register
+_dff_r_async U2_dff_r_async(.clk(clk),.reset_n(reset_n),.d(d[2]),.q(q[2]));//state가 8개이므로 3bit register
+
+endmodule

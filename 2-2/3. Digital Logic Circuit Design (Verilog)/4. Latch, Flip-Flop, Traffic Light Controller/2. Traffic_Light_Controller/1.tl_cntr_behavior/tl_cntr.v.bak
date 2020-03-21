@@ -1,0 +1,12 @@
+module tl_cntr(clk, reset_n, Ta, Tb, La, Lb);
+	input clk, reset_n, Ta, Tb;
+	output [1:0] La, Lb;
+
+	wire		[1:0]	next_state;
+	wire		[1:0]	state;
+
+	_register2_r U0_register2_r(.clk(clk), .reset_n(reset_n), .d(next_state), .q(state));
+	ns_logic U1_ns_logic(.Ta(Ta), .Tb(Tb), .state(state), .nextstate(next_state));
+	o_logic U2_o_logic(.state(state), .La(La), .Lb(Lb));
+
+endmodule

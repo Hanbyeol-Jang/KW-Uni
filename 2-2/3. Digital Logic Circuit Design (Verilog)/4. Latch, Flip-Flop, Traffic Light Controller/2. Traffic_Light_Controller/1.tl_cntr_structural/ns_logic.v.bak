@@ -1,0 +1,10 @@
+module ns_logic(ta,tb,state,nextstate);//state transition design
+
+input [1:0] state;
+input ta,tb;
+output[1:0] nextstate;
+
+assign nextstate[1] = state[1] ^ state[0]; // d1 = q1^q2
+assign nextstate[0] = ((~state[1])&(~state[0])&(~ta)) | ((state[1])&(~state[0])&(~tb));
+//d0 = 'q1'q0'ta + q1'q0'tb
+endmodule

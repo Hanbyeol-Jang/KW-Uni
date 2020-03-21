@@ -1,0 +1,16 @@
+module mux2_8bit(d0, d1, s, y);		//2input 8bit mux
+	input [7:0] d0, d1;	//input
+	input [1:0] s;			//select signal
+	output [7:0] y;		//output
+	reg [7:0] y;			//reg
+	
+	always @(d0, d1, s)	
+	begin
+		case(s)	//case문
+			2'b10		:	y <= d0;		//M0_grant일때
+			2'b01		:	y <= d1;		//M1_grant일때
+			default	:	y=8'bx;		//예외처리 unknown값 넣어줌
+		endcase
+	end
+	
+endmodule

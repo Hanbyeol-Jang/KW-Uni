@@ -1,0 +1,11 @@
+module mx8_32bits(a, b, c, d, e, f, g, h, s2, s1, s0, y);
+	input		[31:0]	a, b, c, d, e, f, g, h;
+	input					s2, s1, s0;
+	output	[31:0]	y;
+	
+	wire		[31:0]	w0, w1, w2, w3, w4, w5;
+	
+	
+	
+	
+endmodule

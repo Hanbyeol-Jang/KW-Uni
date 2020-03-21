@@ -1,0 +1,23 @@
+module register8_r_en(clk, reset_n, d_in, d_out, en);
+	input clk, reset_n, en;
+	input [7:0] d_in;
+	output [7:0] d_out;
+	
+
+endmodule
+
+module register32_r_en(clk, reset_n, d_in, d_out, en);
+	input clk, reset_n, en;
+	input [31:0] d_in;
+	output [31:0] d_out;
+	
+	
+endmodule
+
+module register32_8(clk,reset_n, en, d_in, d_out0, d_out1, d_out2, d_out3, d_out4, d_out5, d_out6, d_out7);
+	input clk, reset_n;
+	input [7:0] en;
+	input [31:0] d_in;
+	output [31:0] d_out0, d_out1, d_out2, d_out3, d_out4, d_out5, d_out6, d_out7;
+	
+endmodule

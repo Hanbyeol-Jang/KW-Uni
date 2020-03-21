@@ -1,0 +1,29 @@
+module ns_logic(Ta, Tb, state, nextstate);
+
+	parameter s0 = 2'b00;
+	parameter s1 = 2'b01;
+	parameter s2 = 2'b10;
+	parameter s3 = 2'b11;
+
+	input [1:0] state;
+	input Ta, Tb;
+	output reg [1:0] nextstate;
+
+	always @(Ta or Tb or state)
+	begin
+		case(state)
+			s0 : if(Ta == 0) nextstate <= s1;
+					else nextstate <= s0;
+			
+			s1 : nextstate <= s2;
+	
+			s2 : if(Tb == 0) nextstate <= s3;
+					else nextstate <= s2;
+			
+			s3 : nextstate <= s0;
+			
+			default;
+		endcase
+	end
+	
+endmodule
