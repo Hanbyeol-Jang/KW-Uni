@@ -1,0 +1,14 @@
+LOAD graph.txt
+PRINT
+BFS 3
+DFS 3
+DFS_R 3
+Kruskal
+Dijkstra 0
+Dijkstra 1
+Dijkstra 2
+Dijkstra 3
+Dijkstra 4
+Dijkstra 5
+Dijkstra 6
+EXIT
