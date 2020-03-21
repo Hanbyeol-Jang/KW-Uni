@@ -1,0 +1,22 @@
+Warning (10273): Verilog HDL warning at ram.v(31): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at ram.v(32): extended using "x" or "z"
+Warning (10268): Verilog HDL information at BUS_arbiter.v(16): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at BUS_arbiter.v(3): object "M0_grant" differs only in case from object "M0_Grant" in the same scope
+Info (10281): Verilog HDL Declaration information at BUS_arbiter.v(3): object "M1_grant" differs only in case from object "M1_Grant" in the same scope
+Warning (10273): Verilog HDL warning at mux2_8bit.v(11): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at mux2_32bit.v(11): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at mux5_32bit.v(14): extended using "x" or "z"
+Info (10281): Verilog HDL Declaration information at DMAC_slave.v(4): object "data_count" differs only in case from object "DATA_COUNT" in the same scope
+Info (10281): Verilog HDL Declaration information at DMAC_slave.v(2): object "op_done" differs only in case from object "OP_DONE" in the same scope
+Info (10281): Verilog HDL Declaration information at DMAC_slave.v(10): object "Interrupt" differs only in case from object "INTERRUPT" in the same scope
+Warning (10273): Verilog HDL warning at DMAC_fifo.v(123): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at DMAC_fifo.v(347): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at DMAC_fifo.v(376): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at DMAC_master.v(41): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at DMAC_master.v(43): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at DMAC_master.v(62): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at DMAC_master.v(69): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at DMAC_master.v(115): extended using "x" or "z"
+Info (10281): Verilog HDL Declaration information at DMAC_master.v(4): object "sc_addr" differs only in case from object "SC_ADDR" in the same scope
+Info (10281): Verilog HDL Declaration information at DMAC_master.v(4): object "ds_addr" differs only in case from object "DS_ADDR" in the same scope
+Info (10281): Verilog HDL Declaration information at DMAC_master.v(4): object "data_size" differs only in case from object "DATA_SIZE" in the same scope

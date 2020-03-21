@@ -1,0 +1,3 @@
+module TOP(clk, reset_n, M0_req, M0_wr, M0_address, M0_dout, M0_grant, F_interrupt, D_interrupt, M_din);
+	input clk, reset_n;
+	input M0_req, M0_wr
