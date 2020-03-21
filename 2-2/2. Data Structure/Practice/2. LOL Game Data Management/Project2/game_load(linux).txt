@@ -1,0 +1,100 @@
+Gameid	Duration	Winner	TeamA_c1	TeamA_c2	TeamA_c3	TeamA_c4	TeamA_c5	TeamB_c1	TeamB_c2	TeamB_c3	TeamB_c4	TeamB_c5
+82	1707	0	Tristana	Soraka	Lux	Maokai	Janna	Kayle	Jarvan IV	Viktor	Jinx	Nami
+27	2472	1	Vayne	Viktor	Janna	Fiddlesticks	Akali	Singed	Kalista	Orianna	Thresh	Jax
+47	2048	0	Jax	Ekko	Alistar	Jinx	Teemo	Yasuo	Tristana	Fiora	Jarvan IV	Janna
+7	1993	0	Heimerdinger	Teemo	Thresh	Tristana	Maokai	Blitzcrank	Miss Fortune	Fiora	Vel'Koz	Warwick
+29	2288	1	Poppy	Yasuo	Sona	Caitlyn	Nidalee	Camille	Bard	Udyr	Swain	Kog'Maw
+17	2390	1	Vayne	Janna	Azir	Xin Zhao	Riven	Fizz	Sejuani	Jhin	Soraka	Mordekaiser
+55	1691	1	Rakan	Zed	Kalista	Riven	Dr. Mundo	Alistar	Ezreal	Heimerdinger	Kayn	Veigar
+63	1633	1	Heimerdinger	Lucian	Fizz	Yasuo	Rakan	Kayn	Orianna	Vi	Soraka	Tristana
+60	1925	0	Gnar	Jarvan IV	Jinx	Fizz	Lux	Ornn	Alistar	Heimerdinger	Ahri	Ezreal
+76	1296	0	Rakan	Shen	Xayah	Dr. Mundo	Taliyah	Lulu	Tristana	Quinn	Zyra	Kayn
+30	1899	0	Thresh	Miss Fortune	Gnar	Malzahar	Shaco	Gragas	Kalista	Kayn	Leona	Garen
+28	1342	1	Warwick	Cho'Gath	Ashe	Leona	Veigar	Lulu	Caitlyn	Gnar	Ahri	Twitch
+16	1717	0	Tryndamere	Katarina	Tristana	Amumu	Soraka	Janna	Lee Sin	Sivir	Ahri	Gnar
+33	1894	0	Jax	Tristana	Yasuo	Soraka	Rammus	Janna	Riven	Malzahar	Lee Sin	Kalista
+22	1962	1	Zed	Janna	Gragas	Twitch	Maokai	Diana	Garen	Jhin	Taric	Heimerdinger
+51	2555	1	Brand	Trundle	Lee Sin	Ashe	Lux	Ahri	Morgana	Jax	Lulu	Twitch
+87	1789	0	Xin Zhao	Jarvan IV	Vayne	Leona	Cassiopeia	LeBlanc	Malphite	Gnar	Kha'Zix	Jhin
+24	1756	0	Darius	Kalista	Thresh	Twisted Fate	Fiddlesticks	Xayah	Janna	Gnar	Orianna	Nocturne
+42	1329	1	Riven	Draven	Sona	Cho'Gath	Rengar	Morgana	Urgot	Ezreal	Twitch	Ekko
+10	2681	1	Ivern	Master Yi	Nasus	Kalista	Diana	Shaco	Varus	Heimerdinger	Lux	Garen
+25	2173	1	Xayah	Evelynn	Fizz	Tryndamere	Veigar	Xerath	Gnar	Vayne	Kassadin	Warwick
+39	2054	0	Kled	Braum	Orianna	Xayah	Vi	Miss Fortune	Kayn	Tahm Kench	Veigar	Lee Sin
+53	1303	1	Cassiopeia	Thresh	Zac	Camille	Kalista	Tristana	Syndra	Gnar	Nunu	Alistar
+66	1261	0	Jax	Kennen	Ezreal	Cho'Gath	Thresh	Heimerdinger	Shen	Diana	Lucian	Orianna
+79	2929	1	Ahri	Warwick	Zac	Thresh	Jhin	Tristana	Veigar	Gnar	Sejuani	Malphite
+6	2059	0	Janna	Kayn	Jax	Veigar	Vayne	Riven	Sivir	Ekko	Olaf	Alistar
+19	1513	1	Jinx	Lee Sin	Taric	Ekko	Irelia	Swain	Teemo	Brand	Jarvan IV	Lucian
+26	2211	1	Gangplank	Tryndamere	Jinx	Elise	Thresh	Taliyah	Darius	Twitch	Vayne	Blitzcrank
+14	1942	0	Zyra	LeBlanc	Rek'Sai	Jax	Caitlyn	Annie	Lee Sin	Jhin	Ezreal	Akali
+68	2259	0	Illaoi	Fizz	Thresh	Rammus	Xayah	Lucian	Jax	Riven	Braum	Cassiopeia
+34	2473	0	Vayne	Thresh	Maokai	Vel'Koz	Sion	Galio	Xin Zhao	Braum	Varus	Darius
+85	1451	0	Ekko	Twitch	Fiora	Brand	Gragas	Kog'Maw	Syndra	Karma	Kha'Zix	Pantheon
+59	1640	1	Master Yi	Ashe	Trundle	Lux	Kayle	Caitlyn	Kayn	Ekko	Nautilus	Lulu
+71	1643	1	Nasus	Fiddlesticks	Leona	Viktor	Ashe	Nunu	Ezreal	Maokai	Xayah	Lulu
+21	2026	1	Syndra	Dr. Mundo	Amumu	Leona	Draven	Lulu	Vayne	Graves	Zed	Teemo
+40	1349	0	Jax	Kog'Maw	Xin Zhao	Thresh	Ahri	Trundle	Zac	Zyra	Tristana	Ekko
+15	2374	1	Janna	Ahri	Xayah	Riven	Kayn	Lux	Lee Sin	Syndra	Jax	Twitch
+52	1026	0	Tristana	Akali	Talon	Maokai	Morgana	Yasuo	Jhin	Thresh	Sejuani	Taliyah
+75	2147	1	Kayn	Lucian	Braum	Nasus	Ryze	Warwick	Nami	Morgana	Draven	Gnar
+94	2131	1	Diana	Braum	Gnar	Kassadin	Jinx	Draven	Gragas	Renekton	Katarina	Thresh
+20	1898	1	Rek'Sai	Corki	Jarvan IV	Tristana	Rakan	Draven	Nami	Gangplank	Kha'Zix	Twisted Fate
+95	2039	1	Lucian	Jarvan IV	Mordekaiser	Xerath	Ahri	Kayn	Vayne	Rakan	Cassiopeia	Camille
+97	1761	0	Trundle	Varus	Lulu	Yasuo	Kled	Akali	Jinx	Leona	Nasus	Vi
+1	1949	0	Vladimir	Bard	Kog'Maw	Master Yi	Viktor	Graves	Xayah	Darius	Zed	Thresh
+50	2237	1	Ashe	Thresh	Maokai	Syndra	Yorick	Renekton	Orianna	Warwick	Blitzcrank	Caitlyn
+92	2149	0	Kayn	Vi	Ziggs	Zyra	Ashe	Rakan	Ahri	Xayah	Maokai	Kayle
+13	2071	0	Gragas	Fizz	Garen	Sona	Ashe	Sivir	Janna	Zed	Master Yi	Xin Zhao
+61	1816	0	Jax	Leona	Katarina	Tristana	Cassiopeia	Vi	Sona	Gragas	Jhin	Vel'Koz
+73	1590	0	Gragas	Taric	Gnar	Taliyah	Vayne	Jinx	Rumble	Jax	Thresh	Rek'Sai
+45	2166	1	Shaco	Teemo	Annie	Lulu	Jinx	Rakan	Twitch	Swain	Orianna	Vi
+18	1994	0	Fiora	Ezreal	Janna	Draven	Ekko	Cho'Gath	Sona	Tryndamere	Orianna	Jinx
+8	1334	0	Gnar	Xayah	Soraka	Malzahar	Gragas	Viktor	Lee Sin	Rakan	Vayne	Maokai
+96	2600	0	Braum	Rumble	Kayn	Varus	Morgana	Lee Sin	Yasuo	Tristana	Nasus	Lulu
+77	2634	0	Vladimir	Tristana	Braum	Ahri	Vi	Jinx	Malphite	Yasuo	Wukong	Garen
+43	1800	0	Kennen	Gragas	Zed	Jhin	Braum	Zyra	Talon	Cassiopeia	Nidalee	Lucian
+78	963	0	Ekko	Ezreal	Zac	Alistar	Riven	Cho'Gath	Vayne	Brand	Cassiopeia	Viktor
+67	2493	0	Miss Fortune	Elise	Galio	Thresh	Irelia	Renekton	Nami	Cho'Gath	Ekko	Kog'Maw
+49	2302	1	Jayce	Tristana	Bard	Elise	Gangplank	Fiora	Jarvan IV	Ekko	Annie	Miss Fortune
+99	1226	1	Morgana	Zed	Kennen	Vi	Twitch	Rengar	Orianna	Darius	Leona	Draven
+72	2187	1	Vladimir	Ezreal	Vel'Koz	Nami	Lee Sin	Riven	Jarvan IV	Gangplank	Jhin	Taliyah
+36	1478	1	Yasuo	Maokai	Miss Fortune	Syndra	Alistar	Twisted Fate	Taric	Jhin	Nasus	Rammus
+37	1505	1	Morgana	Olaf	Kayle	Caitlyn	Ryze	Xin Zhao	Veigar	Yorick	Varus	Leona
+91	1543	1	Ezreal	Karma	Katarina	Yasuo	Udyr	Heimerdinger	Renekton	Blitzcrank	Xin Zhao	Tristana
+84	1934	1	Jarvan IV	Nidalee	Lux	Alistar	Jhin	Syndra	Maokai	Master Yi	Tristana	Tryndamere
+5	2094	0	Warwick	Twitch	Janna	Draven	Syndra	Sona	Jarvan IV	Kayn	Kassadin	Caitlyn
+4	1758	0	Maokai	Brand	Twitch	Orianna	Dr. Mundo	Malzahar	Warwick	Thresh	Riven	Ashe
+90	1469	0	Volibear	Twisted Fate	Blitzcrank	Morgana	Jinx	Vayne	Leona	Sejuani	Vladimir	Gragas
+38	2112	0	Shaco	Sona	Twitch	Brand	Akali	Vayne	Fiora	Udyr	Taric	Lux
+70	1723	0	Vayne	Nasus	LeBlanc	Kayn	Lulu	Urgot	Morgana	Jax	Twitch	Syndra
+98	1534	0	Fiddlesticks	Kled	Ahri	Udyr	Varus	Orianna	Lucian	Jarvan IV	Leona	Jax
+41	2309	1	Karma	Lucian	Anivia	Sion	Elise	Gragas	Sona	Varus	Veigar	Gnar
+69	1697	1	Orianna	Gragas	Volibear	Shen	Jhin	Master Yi	Annie	Caitlyn	Nasus	Rakan
+74	1638	0	Zed	Maokai	Kha'Zix	Zilean	Twitch	Caitlyn	Sona	Urgot	Lux	Ivern
+57	1413	1	Jax	Janna	Katarina	Sivir	Hecarim	Warwick	Jinx	Thresh	Nasus	Ekko
+32	1649	0	Rakan	Akali	Warwick	Tristana	Malzahar	Xerath	Garen	Jarvan IV	Kog'Maw	Lulu
+12	1671	0	Ashe	Twisted Fate	Rammus	Yasuo	Blitzcrank	Bard	Fiora	Amumu	Xerath	Miss Fortune
+93	2050	0	Vi	Kalista	Thresh	Kled	Kassadin	Xerath	Talon	Blitzcrank	Udyr	Jinx
+35	2452	1	Thresh	Ezreal	Wukong	Brand	Dr. Mundo	Nasus	Zed	Tristana	Gragas	Fiddlesticks
+86	1257	1	Vi	Lulu	Twitch	Rammus	Swain	Jarvan IV	Miss Fortune	Thresh	Syndra	Nasus
+58	1682	0	Kayle	Master Yi	Jhin	Zyra	Aurelion Sol	Shen	Taliyah	Thresh	Nautilus	Lucian
+89	2218	1	Veigar	Fizz	Shen	Maokai	Ashe	Katarina	Warwick	Sona	Yasuo	Caitlyn
+3	1493	0	Tristana	Kayn	Nami	Rumble	Kassadin	Cassiopeia	Thresh	Jayce	Jax	Ashe
+44	932	1	Jinx	Thresh	Cassiopeia	Amumu	Gangplank	Soraka	Lucian	Elise	Sivir	Tryndamere
+11	1391	1	Lux	Lucian	Zyra	Maokai	Nautilus	LeBlanc	Kayle	Fizz	Tristana	Leona
+23	1511	1	Kog'Maw	Lulu	LeBlanc	Graves	Urgot	Tryndamere	Cho'Gath	Jinx	Janna	Twisted Fate
+31	1597	1	Vladimir	Leona	Twitch	Graves	Yasuo	Talon	Jarvan IV	Lulu	Ashe	LeBlanc
+65	197	1	Nautilus	Warwick	Caitlyn	Pantheon	Ekko	Ashe	Gragas	Zyra	Kled	Katarina
+2	1851	0	Draven	Irelia	Nidalee	Kayle	Shaco	Malphite	Morgana	Hecarim	Yasuo	Riven
+56	1875	0	Zed	Twitch	Veigar	Lee Sin	Camille	Ashe	Rakan	Kayn	Shaco	Lissandra
+88	1311	0	Sivir	Rakan	Ahri	Darius	Sion	Taric	Kalista	LeBlanc	Garen	Jarvan IV
+9	1387	1	Nautilus	Maokai	Tristana	Nami	Vel'Koz	Twitch	Jarvan IV	Lux	Kayn	Brand
+83	193	0	Brand	Darius	Kha'Zix	Tristana	Lux	Xin Zhao	Volibear	Twitch	Viktor	Leona
+48	1461	1	Gangplank	Malzahar	Soraka	Xayah	Fiddlesticks	Taric	Vayne	Lulu	Darius	Sejuani
+46	1994	0	Gnar	Rakan	Lee Sin	Orianna	Jinx	Jax	Lucian	Ryze	Zyra	Lissandra
+62	1070	0	Draven	Kled	Gragas	Kassadin	Thresh	Orianna	Alistar	Caitlyn	Xin Zhao	Jax
+64	2169	1	Zed	Rammus	Maokai	Ashe	Leona	Anivia	Nautilus	Nocturne	Kled	Tristana
+54	1843	0	Tryndamere	Blitzcrank	Jinx	Zed	Jax	Twitch	Riven	Morgana	Lee Sin	Diana
+81	2051	0	Cassiopeia	Kayle	Hecarim	Vayne	Janna	Lulu	Miss Fortune	Xin Zhao	Talon	Ivern
+80	2097	0	Fizz	Nami	Jax	Miss Fortune	Dr. Mundo	Lux	Sona	Vi	Mordekaiser	Twitch

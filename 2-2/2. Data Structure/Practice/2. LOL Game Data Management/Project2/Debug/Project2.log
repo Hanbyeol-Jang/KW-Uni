@@ -1,0 +1,4 @@
+﻿  Manager.cpp
+c:\users\장한별 (stanley)\desktop\강의자료\2학기\데이터구조실습\2\project2\project2\characterdata.h(56): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Project2.vcxproj -> C:\Users\장한별 (Stanley)\Desktop\강의자료\2학기\데이터구조실습\2\Project2\Debug\Project2.exe
+  Project2.vcxproj -> C:\Users\장한별 (Stanley)\Desktop\강의자료\2학기\데이터구조실습\2\Project2\Debug\Project2.pdb (Partial PDB)

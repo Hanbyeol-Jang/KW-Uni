@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\장한별 (stanley)\desktop\project\project\maxheap.h(34): warning C5037: 'MaxHeap<T>::MaxHeap': 클래스 템플릿 멤버의 확장 정의에는 기본 인수가 포함될 수 없습니다.
+  Project.vcxproj -> C:\Users\장한별 (Stanley)\Desktop\Project\Debug\Project.exe
+  Project.vcxproj -> C:\Users\장한별 (Stanley)\Desktop\Project\Debug\Project.pdb (Partial PDB)

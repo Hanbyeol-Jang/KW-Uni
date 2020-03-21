@@ -1,0 +1,3 @@
+Gameid	Duration	Winner	TeamA_c1	TeamA_c2	TeamA_c3	TeamA_c4	TeamA_c5	TeamB_c1	TeamB_c2	TeamB_c3	TeamB_c4	TeamB_c5
+82	1934	1	Jarvan IV	Nidalee	Lux	Alistar	Jhin	Syndra	Maokai	Master Yi	Tristana	Tryndamere
+27	1638	0	Zed	Maokai	Kha'Zix	Zilean	Twitch	Caitlyn	Sona	Urgot	Lux	Ivern
