@@ -1,0 +1,108 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ARMex, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000         start
+    5 00000000 E59F004C        LDR              r0, =Array1 ;store Array1 in r0
+                                                            
+    6 00000004 E59F1044        LDR              r1, Address1 ;store Address1 in
+                                                             r1
+    7 00000008 E3A0300A        MOV              r3,#10      ;r3=10
+    8 0000000C         
+    9 0000000C         Loop
+   10 0000000C E4908004        LDR              r8,[r0],#4  ; load r0 to r8, r0
+                                                            =r0+4
+   11 00000010 E4418001        STRB             r8,[r1],#-1 ; store r8 in r1, r
+                                                            1=r1-1
+   12 00000014 E2844001        ADD              r4,r4,#1    ; r4=r4+1
+   13 00000018 E1540003        CMP              r4,r3       ; compare r4 with r
+                                                            3
+   14 0000001C 0A000000        BEQ              Endline
+   15 00000020 EAFFFFF9        B                Loop
+   16 00000024         
+   17 00000024         Endline
+   18 00000024 E1A0F00E        MOV              pc,lr
+   19 00000028         
+   20 00000028 0000000A 
+              00000009 
+              00000008 
+              00000007 
+              00000006 
+              00000005 
+              00000004 
+              00000003 
+              00000002 
+              00000001 Array1  DCD              10,9,8,7,6,5,4,3,2,1
+   21 00000050         
+   22 00000050 00004009 
+                       Address1
+                               &                &00004009   ; start storing add
+                                                            ress from 4009 to 4
+                                                            000
+                       
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=ARM9E --apcs=interwork 
+--depend=.\objects\p2.d -o.\objects\p2.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5
+\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION S
+ETA 524" --list=.\listings\p2.lst p2.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARMex 00000000
+
+Symbol: ARMex
+   Definitions
+      At line 1 in file p2.s
+   Uses
+      None
+Comment: ARMex unused
+Address1 00000050
+
+Symbol: Address1
+   Definitions
+      At line 22 in file p2.s
+   Uses
+      At line 6 in file p2.s
+Comment: Address1 used once
+Array1 00000028
+
+Symbol: Array1
+   Definitions
+      At line 20 in file p2.s
+   Uses
+      At line 5 in file p2.s
+Comment: Array1 used once
+Endline 00000024
+
+Symbol: Endline
+   Definitions
+      At line 17 in file p2.s
+   Uses
+      At line 14 in file p2.s
+Comment: Endline used once
+Loop 0000000C
+
+Symbol: Loop
+   Definitions
+      At line 9 in file p2.s
+   Uses
+      At line 15 in file p2.s
+Comment: Loop used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 4 in file p2.s
+   Uses
+      None
+Comment: start unused
+6 symbols
+340 symbols in table

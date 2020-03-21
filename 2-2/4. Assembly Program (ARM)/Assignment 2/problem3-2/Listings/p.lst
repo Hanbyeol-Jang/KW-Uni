@@ -1,0 +1,78 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ARMex, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         start
+    4 00000000         
+    5 00000000 E3A00001        MOV              r0,#1       ;store 1 in r0
+    6 00000004 E1A00080        MOV              r0,r0,LSL #1 
+                                                            ;r0= r0*2 = 1*2 = 2
+                                                            
+    7 00000008 E1A00080        MOV              r0,r0, LSL #1 
+                                                            ;r0= r0*2 = 2*2 = 4
+                                                            
+    8 0000000C E1A00080        MOV              r0,r0, LSL #1 
+                                                            ;r0= r0*2 = 4*2 = 8
+                                                            
+    9 00000010         
+   10 00000010 E3A01001        MOV              r1,#1       ;store 1 in r1
+   11 00000014 E1A01081        MOV              r1,r1, LSL #1 
+                                                            ;r1= r1*2 = 1*2 = 2
+                                                            
+   12 00000018         
+   13 00000018 E0802001        ADD              r2,r0,r1    ;r2=r0+r1=8+2=10
+   14 0000001C E0823002        ADD              r3,r2,r2    ;r3=r2+r2=10+10=20
+   15 00000020         
+   16 00000020 E0040293        MUL              r4,r3,r2    ;r4=r3*r2
+   17 00000024         
+   18 00000024 E59F5004        LDR              r5, Address1 ;load Address1 in 
+                                                            r5
+   19 00000028         
+   20 00000028 E5854000        STR              r4,[r5]     ; store r4 in r5
+   21 0000002C         
+   22 0000002C E1A0F00E        MOV              pc, lr
+   23 00000030         
+   24 00000030 00004000 
+                       Address1
+                               &                &4000
+   25 00000034                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=ARM9E --apcs=interwork 
+--depend=.\objects\p.d -o.\objects\p.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\A
+RM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SET
+A 524" --list=.\listings\p.lst p.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARMex 00000000
+
+Symbol: ARMex
+   Definitions
+      At line 1 in file p.s
+   Uses
+      None
+Comment: ARMex unused
+Address1 00000030
+
+Symbol: Address1
+   Definitions
+      At line 24 in file p.s
+   Uses
+      At line 18 in file p.s
+Comment: Address1 used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 3 in file p.s
+   Uses
+      None
+Comment: start unused
+3 symbols
+335 symbols in table

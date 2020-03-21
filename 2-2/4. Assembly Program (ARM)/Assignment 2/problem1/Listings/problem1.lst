@@ -1,0 +1,88 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ARMex, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000         start
+    5 00000000 E59F0018        LDR              r0,String1  ;store String1 in r
+                                                            0
+    6 00000004 E59F1018        LDR              r1,String2  ;store String2 in r
+                                                            1
+    7 00000008 E59F2018        LDR              r2, Address1 ;store Address1 in
+                                                             r2
+    8 0000000C         
+    9 0000000C E1500001        CMP              r0, r1      ;compare r0 with r1
+                                                            
+   10 00000010         
+   11 00000010 03A03041        MOVEQ            r3, #"A"    ; if r0=r1, store A
+                                                             in r3
+   12 00000014 13A03042        MOVNE            r3, #"B"    ; unless , store B 
+                                                            in r3
+   13 00000018 E5823000        STR              r3,[r2]     ; store r3 in r2
+   14 0000001C         
+   15 0000001C E1A0F00E        MOV              pc,lr
+   16 00000020         
+   17 00000020 4F 4D 47 
+              00       String1 DCB              "OMG",0
+   18 00000024 4F 4D 47 
+              00       String2 DCB              "OMG",0
+   19 00000028 00004000 
+                       Address1
+                               &                &4000
+   20 0000002C                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=ARM9E --apcs=interwork 
+--depend=.\objects\problem1.d -o.\objects\problem1.o -IC:\Keil_v5\ARM\RV31\INC 
+-IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISI
+ON_VERSION SETA 524" --list=.\listings\problem1.lst problem1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARMex 00000000
+
+Symbol: ARMex
+   Definitions
+      At line 1 in file problem1.s
+   Uses
+      None
+Comment: ARMex unused
+Address1 00000028
+
+Symbol: Address1
+   Definitions
+      At line 19 in file problem1.s
+   Uses
+      At line 7 in file problem1.s
+Comment: Address1 used once
+String1 00000020
+
+Symbol: String1
+   Definitions
+      At line 17 in file problem1.s
+   Uses
+      At line 5 in file problem1.s
+Comment: String1 used once
+String2 00000024
+
+Symbol: String2
+   Definitions
+      At line 18 in file problem1.s
+   Uses
+      At line 6 in file problem1.s
+Comment: String2 used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 4 in file problem1.s
+   Uses
+      None
+Comment: start unused
+5 symbols
+337 symbols in table

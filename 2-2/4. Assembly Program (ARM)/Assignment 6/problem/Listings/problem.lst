@@ -1,0 +1,161 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000 0000000D 
+                       cr      EQU              0x0D        ; EQU mean "equal",
+                                                             cr = 0x0d
+    2 00000000         
+    3 00000000                 AREA             strcpy, CODE, READONLY
+    4 00000000                 ENTRY
+    5 00000000         
+    6 00000000         Main
+    7 00000000 E59F003C        LDR              r0, =Table1 ; load address of T
+                                                            able1 into r0
+    8 00000004 E59F103C        LDR              r1, =Table2 ; load address of T
+                                                            able2 into r1
+    9 00000008 E59F203C        LDR              r2, =CharCpy
+   10 0000000C         
+   11 0000000C E1A0E00F        MOV              lr,pc
+   12 00000010 EA000000        B                COPY
+   13 00000014 E3A0F000        MOV              pc,#0
+   14 00000018         
+   15 00000018         COPY
+   16 00000018 E9AD003F        STMFA            sp!,{r0-r5}
+   17 0000001C         
+   18 0000001C         Loop
+   19 0000001C E4D03001        LDRB             r3, [r0], #1
+   20 00000020         
+   21 00000020 E353000D        CMP              r3,#cr
+   22 00000024 054F6008        STRBEQ           r6, CharCpy
+   23 00000028 083D003F        LDMFAEQ          sp!, {r0-r5}
+   24 0000002C 01A0F00E        MOVEQ            pc, lr
+   25 00000030         
+   26 00000030 E3530020        CMP              r3, #0x20
+   27 00000034 0AFFFFF8        BEQ              Loop
+   28 00000038 E4C13001        STRB             r3,[r1],#1
+   29 0000003C E2866001        ADD              r6,r6,#1
+   30 00000040 EAFFFFF5        B                Loop
+   31 00000044         
+   32 00000044         
+   33 00000044         ;================DATA AREA
+   34 00000044 00000000 
+              00000000 
+              00000000         AREA             Data, DATA
+   35 00000000         CharCpy
+   36 00000000 00              DCB              0
+   37 00000001         
+   38 00000001         Table1
+   39 00000001 48 65 6C 
+              6C 6F 20 
+              57 6F 72 
+              6C 64 0D         DCB              "Hello World", cr
+   40 0000000D 00 00 00        ALIGN
+   41 00000010         Table2
+   42 00000010 00              DCB              0
+   43 00000011 00 00 00        ALIGN
+   44 00000014         
+   45 00000014                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=ARM9E --apcs=interwork 
+--depend=.\objects\problem.d -o.\objects\problem.o -IC:\Keil_v5\ARM\RV31\INC -I
+C:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION
+_VERSION SETA 524" --list=.\listings\problem.lst problem.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+COPY 00000018
+
+Symbol: COPY
+   Definitions
+      At line 15 in file problem.s
+   Uses
+      At line 12 in file problem.s
+Comment: COPY used once
+Loop 0000001C
+
+Symbol: Loop
+   Definitions
+      At line 18 in file problem.s
+   Uses
+      At line 27 in file problem.s
+      At line 30 in file problem.s
+
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 6 in file problem.s
+   Uses
+      None
+Comment: Main unused
+strcpy 00000000
+
+Symbol: strcpy
+   Definitions
+      At line 3 in file problem.s
+   Uses
+      None
+Comment: strcpy unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+CharCpy 00000000
+
+Symbol: CharCpy
+   Definitions
+      At line 35 in file problem.s
+   Uses
+      At line 9 in file problem.s
+      At line 22 in file problem.s
+
+Data 00000000
+
+Symbol: Data
+   Definitions
+      At line 34 in file problem.s
+   Uses
+      None
+Comment: Data unused
+Table1 00000001
+
+Symbol: Table1
+   Definitions
+      At line 38 in file problem.s
+   Uses
+      At line 7 in file problem.s
+Comment: Table1 used once
+Table2 00000010
+
+Symbol: Table2
+   Definitions
+      At line 41 in file problem.s
+   Uses
+      At line 8 in file problem.s
+Comment: Table2 used once
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+cr 0000000D
+
+Symbol: cr
+   Definitions
+      At line 1 in file problem.s
+   Uses
+      At line 21 in file problem.s
+      At line 39 in file problem.s
+
+1 symbol
+343 symbols in table

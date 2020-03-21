@@ -1,0 +1,92 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ARMex, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000         start
+    5 00000000 E3A01005        MOV              r1, #5      ;r1=5
+    6 00000004 E3A0200A        MOV              r2, #10     ;r2=10
+    7 00000008 E3A0300F        MOV              r3, #15     ;r3=15
+    8 0000000C         
+    9 0000000C E59F0024        LDR              r0, TEMPADDR1 ;r0¿¡ ÁÖ¼Ò°ª ÀúÀå
+                                                            
+   10 00000010         
+   11 00000010 E5C01001        STRB             r1, [r0,#1] ;r0¿¡ÀúÀåµÈ ÁÖ¼Ò°ª¿
+                                                            ¡ 1bytes ´õÇÑ ¸Þ¸ð¸
+                                                            ®¿¡ r1°ª ÀúÀå
+   12 00000014 E5C02002        STRB             r2, [r0,#2] ;r0¿¡ÀúÀåµÈ ÁÖ¼Ò°ª¿
+                                                            ¡ 2bytes ´õÇÑ ¸Þ¸ð¸
+                                                            ®¿¡ r2°ª ÀúÀå
+   13 00000018 E5C03003        STRB             r3, [r0,#3] ;r0¿¡ÀúÀåµÈ ÁÖ¼Ò°ª¿
+                                                            ¡ 3bytes ´õÇÑ ¸Þ¸ð¸
+                                                            ®¿¡ r3°ª ÀúÀå
+   14 0000001C         
+   15 0000001C E5D01001        LDRB             r1, [r0,#1] ;r0¿¡ÀúÀåµÈ ÁÖ¼Ò°ª¿
+                                                            ¡ 1bytes ´õÇÑ ¸Þ¸ð¸
+                                                            ®¿¡ ÀúÀåµÇÀÖ´Â°ªÀ» 
+                                                            r1¿¡ ÀúÀå
+   16 00000020 E5D02002        LDRB             r2, [r0,#2] ;r0¿¡ÀúÀåµÈ ÁÖ¼Ò°ª¿
+                                                            ¡ 2bytes ´õÇÑ ¸Þ¸ð¸
+                                                            ®¿¡ ÀúÀåµÇÀÖ´Â°ªÀ» 
+                                                            r2¿¡ ÀúÀå
+   17 00000024 E5D03003        LDRB             r3, [r0,#3] ;r0¿¡ÀúÀåµÈ ÁÖ¼Ò°ª¿
+                                                            ¡ 3bytes ´õÇÑ ¸Þ¸ð¸
+                                                            ®¿¡ ÀúÀåµÇÀÖ´Â°ªÀ» 
+                                                            r3¿¡ ÀúÀå
+   18 00000028         
+   19 00000028 E351000A        CMP              r1, #10     ;r1(5)¿Í 10ÀÌ¶û ºñ±
+                                                            ³ÇßÀ»¶§
+   20 0000002C         ; CMP r2, #10    ;r2(10)¿Í 10ÀÌ¶û ºñ±³ÇßÀ»¶§
+   21 0000002C         ; CMP r3, #10    ;r3(15)¿Í 10ÀÌ¶û ºñ±³ÇßÀ»¶§
+   22 0000002C 83A05001        MOVHI            r5, #1      ;r1ÀÌ 10º¸´Ù Å©¸é r
+                                                            5¿¡ 1ÀúÀå
+   23 00000030 33A05002        MOVLO            r5, #2      ;r1ÀÌ 10º¸´Ù ÀÛÀ¸¸é
+                                                             r5¿¡ 2ÀúÀå
+   24 00000034 03A05003        MOVEQ            r5, #3      ;r1°ú 10ÀÌ °°À¸¸é r
+                                                            5¿¡ 3ÀúÀå
+   25 00000038         
+   26 00000038 00001000 
+                       TEMPADDR1
+                               &                &00001000   ;ÁÖ¼Ò°ª ¸í½Ã
+   27 0000003C         
+   28 0000003C                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=ARM966E-S --apcs=interw
+ork --depend=.\objects\problem.d -o.\objects\problem.o -IC:\Keil_v5\ARM\RV31\IN
+C -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVI
+SION_VERSION SETA 524" --list=.\listings\problem.lst problem.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARMex 00000000
+
+Symbol: ARMex
+   Definitions
+      At line 1 in file problem.s
+   Uses
+      None
+Comment: ARMex unused
+TEMPADDR1 00000038
+
+Symbol: TEMPADDR1
+   Definitions
+      At line 26 in file problem.s
+   Uses
+      At line 9 in file problem.s
+Comment: TEMPADDR1 used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 4 in file problem.s
+   Uses
+      None
+Comment: start unused
+3 symbols
+335 symbols in table

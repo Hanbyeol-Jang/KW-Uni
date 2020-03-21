@@ -1,0 +1,119 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ARMex,CODE,READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000         Start
+    5 00000000 E59F2058        LDR              r2, Address1 ;load Address1 to 
+                                                            r2
+    6 00000004         
+    7 00000004 E3A00001        MOV              r0, #1      ;r0=1      =1
+    8 00000008 E4820004        STR              r0, [r2], #4 ;store r0 in r2, r
+                                                            2=r2+4byte
+    9 0000000C         
+   10 0000000C E0800000        ADD              r0, r0,r0   ;r0=1+1=2     =1*2
+   11 00000010 E4820004        STR              r0, [r2], #4 ;store r0 in r2, r
+                                                            2=r2+4byte
+   12 00000014         
+   13 00000014 E0800080        ADD              r0, r0, r0,LSL #1 ;r0=2+2*2=6  
+                                                               =1*2*3
+   14 00000018 E4820004        STR              r0, [r2], #4 ;store r0 in r2, r
+                                                            2=r2+4byte
+   15 0000001C         
+   16 0000001C E1A00100        MOV              r0, r0, LSL #2 ;r0=6*4=24     =
+                                                            1*2*3*4
+   17 00000020 E4820004        STR              r0, [r2], #4 ;store r0 in r2, r
+                                                            2=r2+4byte
+   18 00000024         
+   19 00000024 E0800100        ADD              r0, r0, r0, LSL #2 ;r0=24+24*4=
+                                                            120    =1*2*3*4*5
+   20 00000028 E4820004        STR              r0, [r2], #4 ;store r0 in r2, r
+                                                            2=r2+4byte
+   21 0000002C         
+   22 0000002C E0801100        ADD              r1, r0, r0, LSL #2 
+                                                            ;r1=120+120*4=600
+   23 00000030 E0800001        ADD              r0, r0, r1  ;r0=120+600=720    
+                                                            =1*2*3*4*5*6
+   24 00000034 E4820004        STR              r0, [r2], #4 ;store r0 in r2, r
+                                                            2=r2+4byte
+   25 00000038         
+   26 00000038 E0600180        RSB              r0, r0, r0, LSL #3 ;r0=720*8-72
+                                                            0=5040   = 1*2*3*4*
+                                                            5*6*7
+   27 0000003C E4820004        STR              r0, [r2], #4 ;store r0 in r2, r
+                                                            2=r2+4byte
+   28 00000040         
+   29 00000040 E1A00180        MOV              r0, r0, LSL #3 ;r0=5040*8=40320
+                                                               =1*2*3*4*5*6*7*8
+                                                            
+   30 00000044 E4820004        STR              r0, [r2], #4 ;store r0 in r2, r
+                                                            2=r2+4byte
+   31 00000048         
+   32 00000048 E0800180        ADD              r0, r0, r0, LSL #3 ;r0=40320*8+
+                                                            40320=40320*9 =1*2*
+                                                            3*4*5*6*7*8*9
+   33 0000004C E4820004        STR              r0, [r2], #4 ;store r0 in r2, r
+                                                            2=r2+4byte
+   34 00000050         
+   35 00000050 E0801180        ADD              r1, r0, r0, LSL #3 ;r1=r0+r0*8=
+                                                            r0*9   =1*2*3*4*5*6
+                                                            *7*8*9*9           
+                                                              
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   36 00000054 E0800001        ADD              r0, r0, r1  ;r0=r0+r0*9=r0*10  
+                                                              =1*2*3*4*5*6*7*8*
+                                                            9*10
+   37 00000058 E5820000        STR              r0, [r2]    ;store r0 in r2
+   38 0000005C         
+   39 0000005C E1A0F00E        MOV              pc,lr       ;pc=lr
+   40 00000060         
+   41 00000060 00040000 
+                       Address1
+                               &                &00040000   ;Address1=40000
+   42 00000064         
+   43 00000064                 end
+Command Line: --debug --xref --diag_suppress=9931 --cpu=ARM9E --apcs=interwork 
+--depend=.\objects\p1.d -o.\objects\p1.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5
+\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION S
+ETA 524" --list=.\listings\p1.lst p1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARMex 00000000
+
+Symbol: ARMex
+   Definitions
+      At line 1 in file p1.s
+   Uses
+      None
+Comment: ARMex unused
+Address1 00000060
+
+Symbol: Address1
+   Definitions
+      At line 41 in file p1.s
+   Uses
+      At line 5 in file p1.s
+Comment: Address1 used once
+Start 00000000
+
+Symbol: Start
+   Definitions
+      At line 4 in file p1.s
+   Uses
+      None
+Comment: Start unused
+3 symbols
+335 symbols in table

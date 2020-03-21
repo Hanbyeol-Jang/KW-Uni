@@ -1,0 +1,108 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ARMex, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000         start
+    5 00000000 E3A00001        MOV              r0, #1      ;r0=1;
+    6 00000004 E3A01002        MOV              r1, #2      ;r1=2;
+    7 00000008 E3A03003        MOV              r3, #3      ;r3=3;
+    8 0000000C E3A04004        MOV              r4, #4      ;r4=4;
+    9 00000010         
+   10 00000010 E59F2024        LDR              r2, TEMPADDR1 ;r2¿¡ ÁÖ¼Ò°ª ÀúÀå
+                                                            
+   11 00000014         
+   12 00000014 E5C20000        STRB             r0, [r2]    ;r2¿¡ ÀúÀåµÇ¾îÀÖ´Â 
+                                                            ¸Þ¸ð¸®ÁÖ¼Ò¿¡ r0°ª À
+                                                            úÀå
+   13 00000018 E5C21001        STRB             r1, [r2, #1] ;r2¿¡ ÀúÀåµÇ¾îÀÖ´Â
+                                                             ¸Þ¸ð¸®ÁÖ¼Ò¿¡ 1byte
+                                                            ´õÇÑ ¸Þ¸ð¸®¿¡ r1°ª 
+                                                            ÀúÀå
+   14 0000001C E5C23002        STRB             r3, [r2, #2] ;r2¿¡ ÀúÀåµÇ¾îÀÖ´Â
+                                                             ¸Þ¸ð¸®ÁÖ¼Ò¿¡ 2byte
+                                                            ´õÇÑ ¸Þ¸ð¸®¿¡ r3°ª 
+                                                            ÀúÀå
+   15 00000020 E5C24003        STRB             r4, [r2, #3] ;r2¿¡ ÀúÀåµÇ¾îÀÖ´Â
+                                                             ¸Þ¸ð¸®ÁÖ¼Ò¿¡ 3byte
+                                                            ´õÇÑ ¸Þ¸ð¸®¿¡ r4°ª 
+                                                            ÀúÀå
+   16 00000024         
+   17 00000024 E5925000        LDR              r5, [r2]    ;r2¿¡ÀúÀåµÇÀÖ´Â ÁÖ¼
+                                                            Ò°ª¿¡ÀÖ´Â 32bitÀÇ ¸
+                                                            Þ¸ð¸®°ø°£ÀÇ µ¥ÀÌÅÍ¸
+                                                            ¦ r5¿¡ÀúÀå
+   18 00000028         
+   19 00000028 E5C24000        STRB             r4, [r2]    ;r2¿¡ ÀúÀåµÇ¾îÀÖ´Â 
+                                                            ¸Þ¸ð¸®ÁÖ¼Ò¿¡ r4°ª À
+                                                            úÀå
+   20 0000002C E5C23001        STRB             r3, [r2, #1] ;r2¿¡ ÀúÀåµÇ¾îÀÖ´Â
+                                                             ¸Þ¸ð¸®ÁÖ¼Ò¿¡ 1byte
+                                                            ´õÇÑ ¸Þ¸ð¸®¿¡ r3°ª 
+                                                            ÀúÀå
+   21 00000030 E5C21002        STRB             r1, [r2, #2] ;r2¿¡ ÀúÀåµÇ¾îÀÖ´Â
+                                                             ¸Þ¸ð¸®ÁÖ¼Ò¿¡ 2byte
+                                                            ´õÇÑ ¸Þ¸ð¸®¿¡ r1°ª 
+                                                            ÀúÀå
+   22 00000034 E5C20003        STRB             r0, [r2, #3] ;r2¿¡ ÀúÀåµÇ¾îÀÖ´Â
+                                                             ¸Þ¸ð¸®ÁÖ¼Ò¿¡ 3byte
+                                                            ´õÇÑ ¸Þ¸ð¸®¿¡ r0°ª 
+                                                            ÀúÀå
+   23 00000038         
+   24 00000038 E5926000        LDR              r6, [r2]    ;r2¿¡ÀúÀåµÇÀÖ´Â ÁÖ¼
+                                                            Ò°ª¿¡ÀÖ´Â 32bitÀÇ ¸
+                                                            Þ¸ð¸®°ø°£ÀÇ µ¥ÀÌÅÍ¸
+                                                            ¦ r6¿¡ÀúÀå
+   25 0000003C         
+   26 0000003C         
+   27 0000003C 00004000 
+                       TEMPADDR1
+                               &                &00004000   ;ÁÖ¼Ò°ª ¸í½Ã
+   28 00000040         
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   29 00000040                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=ARM9E --apcs=interwork 
+--depend=.\objects\problem.d -o.\objects\problem.o -IC:\Keil_v5\ARM\RV31\INC -I
+C:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION
+_VERSION SETA 524" --list=.\listings\problem.lst problem.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARMex 00000000
+
+Symbol: ARMex
+   Definitions
+      At line 1 in file problem.s
+   Uses
+      None
+Comment: ARMex unused
+TEMPADDR1 0000003C
+
+Symbol: TEMPADDR1
+   Definitions
+      At line 27 in file problem.s
+   Uses
+      At line 10 in file problem.s
+Comment: TEMPADDR1 used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 4 in file problem.s
+   Uses
+      None
+Comment: start unused
+3 symbols
+335 symbols in table

@@ -1,0 +1,82 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             po, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000         Start
+    5 00000000 E3A00000        MOV              r0, #0      ;r0=0
+    6 00000004 E3A01001        MOV              r1, #1      ;r1=1
+    7 00000008 E3A02002        MOV              r2, #2      ;r2=2
+    8 0000000C E3A03003        MOV              r3, #3      ;r3=3
+    9 00000010 E3A04004        MOV              r4, #4      ;r4=4
+   10 00000014 E3A05005        MOV              r5, #5      ;r5=5
+   11 00000018 E3A06006        MOV              r6, #6      ;r6=6
+   12 0000001C E3A07007        MOV              r7, #7      ;r7=7
+   13 00000020         
+   14 00000020 E59FD014        LDR              sp, Address1 ;load Address1 to 
+                                                            sp
+   15 00000024         
+   16 00000024 E9AD0004        STMFA            sp!,{r2}    ;store r2 into stac
+                                                            k by full ascending
+                                                             and update sp
+   17 00000028 E9AD0009        STMFA            sp!,{r0,r3} ;store r0,r3 into s
+                                                            tack by full ascend
+                                                            ing and update sp
+   18 0000002C E9AD00E0        STMFA            sp!,{r5-r7} ;store r5,r6,r7 int
+                                                            o stack by full asc
+                                                            ending and update s
+                                                            p
+   19 00000030 E9AD0012        STMFA            sp!,{r1,r4} ;store r1,r4 into s
+                                                            tack by full ascend
+                                                            ing and update sp
+   20 00000034         
+   21 00000034 E83D00FF        LDMFA            sp!, {r0-r7} ;pop datas from st
+                                                            ack by full ascendi
+                                                            ng
+   22 00000038         
+   23 00000038 E1A0F00E        MOV              pc,lr
+   24 0000003C         
+   25 0000003C 00040000 
+                       Address1
+                               &                &00040000   ;Address1=40000
+   26 00000040                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=ARM9E --apcs=interwork 
+--depend=.\objects\p1.d -o.\objects\p1.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5
+\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION S
+ETA 524" --list=.\listings\p1.lst p1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Address1 0000003C
+
+Symbol: Address1
+   Definitions
+      At line 25 in file p1.s
+   Uses
+      At line 14 in file p1.s
+Comment: Address1 used once
+Start 00000000
+
+Symbol: Start
+   Definitions
+      At line 4 in file p1.s
+   Uses
+      None
+Comment: Start unused
+po 00000000
+
+Symbol: po
+   Definitions
+      At line 1 in file p1.s
+   Uses
+      None
+Comment: po unused
+3 symbols
+335 symbols in table
