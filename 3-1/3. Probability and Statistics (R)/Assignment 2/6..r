@@ -1,0 +1,5 @@
+round(qnorm(0.005, lower=F), 2)
+round(qnorm(0.01, lower=F), 2)
+round(qnorm(0.025, lower=F), 2)
+round(qnorm(0.05, lower=F), 3)
+qnorm(0.05,25.5,4.5,lower=F)
