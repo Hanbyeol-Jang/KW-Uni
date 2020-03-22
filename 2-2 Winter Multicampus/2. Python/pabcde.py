@@ -1,0 +1,2 @@
+def ppp():
+    print("abcde")

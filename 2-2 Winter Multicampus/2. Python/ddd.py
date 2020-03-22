@@ -1,0 +1,21 @@
+num=int(input("진수(2/8/10/16) 입력: "))
+num1=input("첫 번째 수 입력: ")
+num2=input("두 번째 수 입력: ")
+
+print("\n두 수의 & 연산 결과")
+print("16진수: %s" %hex(int(num1,num) & int(num2,num)))
+print("10진수: %s" %(int(num1,num) & int(num2,num)))
+print("8진수: %s" %oct(int(num1,num) & int(num2,num)))
+print("2진수: %s" %bin(int(num1,num) & int(num2,num)))
+
+print("\n두 수의 | 연산 결과")
+print("16진수: %s" %hex(int(num1,num) | int(num2,num)))
+print("10진수: %s" %(int(num1,num) | int(num2,num)))
+print("8진수: %s" %oct(int(num1,num) | int(num2,num)))
+print("2진수: %s" %bin(int(num1,num) | int(num2,num)))
+
+print("\n두 수의 ^ 연산 결과")
+print("16진수: %s" %hex(int(num1,num) ^ int(num2,num)))
+print("10진수: %s" %(int(num1,num) ^ int(num2,num)))
+print("8진수: %s" %oct(int(num1,num) ^ int(num2,num)))
+print("2진수: %s" %bin(int(num1,num) ^ int(num2,num)))

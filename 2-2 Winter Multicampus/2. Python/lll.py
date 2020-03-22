@@ -1,0 +1,2 @@
+def dkdk():
+    print("ddd")
